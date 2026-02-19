@@ -15,6 +15,12 @@ fn main() {
             break;
         }
 
+        let x = command.split(" ").collect::<Vec<&str>>();
+        if Some(&"echo") == x.get(0) {
+            println!("{}", &x[1..].join(" "));
+            continue;
+        }
+
         println!("{command}: command not found");
     }
 }
